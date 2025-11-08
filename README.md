@@ -32,10 +32,6 @@ enum4linux – enumeração SMB
 
 smbclient – acesso e validação de compartilhamentos SMB
 
-hydra - ftp
-
-crunch – geração de wordlists
-
 -----
 
 ## ⚙️ Configuração do Ambiente
@@ -58,27 +54,10 @@ Os testes foram divididos em cenários específicos para demonstrar a versatilid
 
 ### 1\. Força Bruta em Serviço FTP
 
-  * **Alvo:** Serviço FTP do Metasploitable 2.
-  * **Técnica:** Utilização do Medusa para testar uma **wordlist de senhas** contra um usuário conhecido.
-  * **Comando Utilizado:**
-    ```bash
-    medusa -h [IP_ALVO] -u [USUARIO] -P [CAMINHO_WORDLIST] -M ftp
-    ```
-
 ### 2\. Automação de Tentativas em Formulário Web (DVWA)
-
-  * **Alvo:** Página de Login *Brute Force* do DVWA.
-  * **Técnica:** Utilização de scripts (ou outra funcionalidade do Medusa/Ferramenta alternativa) para automatizar o envio de credenciais através de requisições HTTP.
 
 ### 3\. Password Spraying em Serviço SMB
 
-  * **Alvo:** Serviço SMB do Metasploitable 2.
-  * **Técnica:** **Password Spraying** (tentar *uma* senha comum contra *múltiplos* usuários) com enumeração de usuários.
-  * **Comando Utilizado:**
-    ```bash
-    # Exemplo: enumeração de usuários seguida de password spraying com Medusa ou Hydra.
-    medusa -h [IP_ALVO] -U [CAMINHO_LISTA_USUARIOS] -p [SENHA_COMUM] -M smb
-    ```
 
 -----
 

