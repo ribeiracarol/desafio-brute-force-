@@ -22,6 +22,22 @@ Ao longo deste desafio, os seguintes objetivos foram alcançados:
 
 -----
 
+## 🎯 Ferramentas
+
+medusa – ataques de força-bruta (FTP, HTTP, SMB)
+
+nmap – descoberta de hosts e serviços
+
+enum4linux – enumeração SMB
+
+smbclient – acesso e validação de compartilhamentos SMB
+
+hydra - ftp
+
+crunch – geração de wordlists
+
+-----
+
 ## ⚙️ Configuração do Ambiente
 
 O ambiente de laboratório foi montado utilizando máquinas virtuais (VMs) no **VirtualBox** para garantir que todos os testes fossem realizados em um espaço isolado e seguro.
@@ -48,13 +64,11 @@ Os testes foram divididos em cenários específicos para demonstrar a versatilid
     ```bash
     medusa -h [IP_ALVO] -u [USUARIO] -P [CAMINHO_WORDLIST] -M ftp
     ```
-  * **Resultado:** *[Incluir aqui a evidência do sucesso ou falha, e o tempo de execução.]*
 
 ### 2\. Automação de Tentativas em Formulário Web (DVWA)
 
   * **Alvo:** Página de Login *Brute Force* do DVWA.
   * **Técnica:** Utilização de scripts (ou outra funcionalidade do Medusa/Ferramenta alternativa) para automatizar o envio de credenciais através de requisições HTTP.
-  * **Resultado:** \*[Incluir evidências e o método usado (ex: Burp Suite Intruder, Hydra).] \*
 
 ### 3\. Password Spraying em Serviço SMB
 
@@ -65,7 +79,6 @@ Os testes foram divididos em cenários específicos para demonstrar a versatilid
     # Exemplo: enumeração de usuários seguida de password spraying com Medusa ou Hydra.
     medusa -h [IP_ALVO] -U [CAMINHO_LISTA_USUARIOS] -p [SENHA_COMUM] -M smb
     ```
-  * **Resultado:** *[Incluir evidências da validação de acesso.]*
 
 -----
 
@@ -76,7 +89,7 @@ Esta seção detalha os artefatos gerados e as principais recomendações de seg
 ### Wordlists e Scripts
 
   * As **wordlists** utilizadas foram simples e criadas para fins educacionais, focadas em credenciais fracas. (Disponíveis na pasta `/wordlists`).
-  * **Comandos:** Uma lista completa dos comandos Medusa e demais ferramentas está incluída [aqui].
+  * **Comandos:** Uma lista completa dos comandos Medusa e demais ferramentas. (Disponíveis em `commands.txt`).
 
 ### Medidas de Mitigação Recomendadas 🔑
 
@@ -89,11 +102,8 @@ Esta seção detalha os artefatos gerados e as principais recomendações de seg
 
 -----
 
-## 🔗 Recursos e Referências
+## 🔗 Repositório
 
-  * **Kali Linux:** Site Oficial
-  * **Medusa:** Documentação e Man Pages
-  * **Metasploitable 2 e DVWA:** Documentação do ambiente vulnerável.
-  * **DIO - Digital Innovation One:** Desafio de projeto "Criando um Ataque Brute Force de senhas com Medusa e Kali Linux".
-
-*[Opcional: Adicione capturas de tela dos testes bem-sucedidos na pasta `/images` e referencie-as aqui.]*
+* /images
+* /wordlists
+* commands.txt
