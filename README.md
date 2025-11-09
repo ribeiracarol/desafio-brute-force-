@@ -22,7 +22,7 @@ Ao longo deste desafio, os seguintes objetivos foram alcançados:
 
 -----
 
-## 🎯 Ferramentas
+## 🛠️ Ferramentas
 
 medusa – ataques de força-bruta (FTP, HTTP, SMB)
 
@@ -65,12 +65,11 @@ Os testes foram divididos em cenários específicos para demonstrar a versatilid
 
 Esta seção detalha os artefatos gerados e as principais recomendações de segurança.
 
-### Wordlists e Scripts
+### * **Comandos:** Uma lista completa dos comandos Medusa e demais ferramentas. (Disponíveis em `commands.txt`).
+### * **Imagens:** Prints das telas de execuçao. (Disponíveis na pasta `imagens`).
 
-  * As **wordlists** utilizadas foram simples e criadas para fins educacionais, focadas em credenciais fracas. (Disponíveis na pasta `/wordlists`).
-  * **Comandos:** Uma lista completa dos comandos Medusa e demais ferramentas. (Disponíveis em `commands.txt`).
 
-### Medidas de Mitigação Recomendadas 🔑
+### * Medidas de Mitigação Recomendadas:
 
 | Vulnerabilidade | Medida de Prevenção | Detalhes |
 | :--- | :--- | :--- |
@@ -80,9 +79,3 @@ Esta seção detalha os artefatos gerados e as principais recomendações de seg
 | Autenticação | Adotar **Autenticação de Múltiplos Fatores (MFA)**. | Adicionar uma camada de segurança que impede a invasão apenas com a senha comprometida. |
 
 -----
-
-## 🔗 Repositório
-
-* /images
-* /wordlists
-* commands.txt
